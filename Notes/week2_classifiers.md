@@ -83,15 +83,16 @@ argmin은 배열 요소 N개를 한 번씩 들려서 비교하므로 O(N),
 
 위의 알고리즘을 그대로 적용하면 다음과 같이 나올 것이다.
 
-[##_Image|kage@cIGP6W/dJMcad1OvTG/AAAAAAAAAAAAAAAAAAAAANjmrYSokNRnQzte6-WC-Z3GtF6DZz62ACP0LG4ocM9e/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1769871599&amp;allow_ip=&amp;allow_referer=&amp;signature=i59QUtaupBS6gaILazG3O6kj%2Bi0%3D|CDM|1.3|{"originWidth":645,"originHeight":510,"style":"alignCenter","width":364,"height":288}_##]
+<img width="500" height="380" alt="Image" src="https://github.com/user-attachments/assets/1292ead7-e591-43b5-b1a3-a817a4e36703" />
+
 
 이미지를 보면, 뭔가 이상한 point가 있다. 초록영역에 떡하니 하나 있는 노란색 point이다. 이는 outlier일 것이다. 실제 문제 해결과정에서 이런 outlier가 다수 존재 할 것이다.
 
 이러한 outlier에 강건하도록 영역을 분할 하려면 어떻게 해야할까? 단순하다. 가까운점을 여러 개(k) 뽑아보고 이들이 어디에 속해 있는지 보고, 다수결로 정해주자.
 
 이를 k-Nearest Neighbors 알고리즘이라고 한다.
+<img width="1180" height="329" alt="Image" src="https://github.com/user-attachments/assets/bd02f9a2-7f6b-42ec-a980-00e1787b709d" />
 
-[##_Image|kage@PTCd6/dJMcadAJ6ho/AAAAAAAAAAAAAAAAAAAAAJKUTSkogInGNliEAOhIlT7CTXz0g4TVb9ziS7vLmosK/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1769871599&amp;allow_ip=&amp;allow_referer=&amp;signature=kR%2FVdNRotpqW6NtAeFOgOnNoYXE%3D|CDM|1.3|{"originWidth":1180,"originHeight":329,"style":"alignCenter"}_##]
 
 k에 따라서 이상치가 해결되고, 더욱 smooth한 경계선을 가지는 것을 확인할 수 있다. 하지만 문제점이 보인다. 바로 결정되지 않는 영역이 생기는 것이다.
 
@@ -126,7 +127,7 @@ Idea 3 : validation set accuaracy가 가장 높은 k → ✅
 
 dataset을 k개의 fold로 나누고 번갈아가면서 validation set역할을 하게 한다. 이러면 k를 결정하는 데에 가지고 있는 모든 데이터셋이 참여하게 되면서 더욱 일반적인 성능의 k를 기대할 수 있을 것이다.
 
-[##_Image|kage@Elk3d/dJMcagddyl0/AAAAAAAAAAAAAAAAAAAAAD94nRWHxinNfiOxLR4v3trPCd7-cBYsEZgC6TqtraaV/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1769871599&amp;allow_ip=&amp;allow_referer=&amp;signature=OO9GaTYvhTXtUNdGr5Ep%2FLDHhJA%3D|CDM|1.3|{"originWidth":1110,"originHeight":317,"style":"alignCenter"}_##]
+<img width="1110" height="317" alt="Image" src="https://github.com/user-attachments/assets/f69d9fbc-77bb-4b3e-91d8-ce82efbcb8b8" />
 
 _하지만 deep learning에서는 자주 쓰이지는 않는다_.
 
